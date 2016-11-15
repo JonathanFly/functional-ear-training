@@ -14,11 +14,12 @@
 <WelcomeWindow>:
     orientation: 'vertical'
     BoxLayout:
-	orientation: 'horizontal'
-	Image: 
-	    source: 'resources/logo.png'
-	Label:
-	    text: 'Initial'
+        orientation: 'horizontal'
+        Image:
+            source: 'resources/logo.png'
+        Label:
+            text: 'Initial'
+            color: 0,0,0,1
     BoxLayout:
         orientation: 'vertical'
         Button:
@@ -39,7 +40,13 @@
 
 <BasicWindow>:
     orientation: 'vertical'
-    Image:
+    BoxLayout:
+        orientation: 'horizontal'
+        Image:
+            source: 'resources/logo.png'
+        Label:
+            text: 'Basic ear training'
+            color: 0,0,0,1
     GridLayout:
         cols: 2
         Button:
@@ -58,10 +65,13 @@
         color: 0,0,0,1
         text: 'Ok'
 
-<IntroductionScreen>:
-    Label:
-        color: 0,0,0,1
-        text: 'long [b]text[/b]'
-        markup: 'true'
-#Label:
-#  color: 0, 0, 0, 1
+<IntroductionWidget>:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        height: 170
+        Image:
+            source: 'resources/logo.png'
+        Label:
+            text: 'Introduction to the method'
+            color: 0,0,0,1

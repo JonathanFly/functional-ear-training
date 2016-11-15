@@ -85,6 +85,10 @@ class BasicWindow(BoxLayout):
 class MyApp(App):
 
     def build(self):
+
+        # this will be set when screen change needs confirmation
+        self.is_occupied = False
+        
         self.screen_dict = {
             'initial' : InitialScreen,
             'introduction' : IntroductionScreen,

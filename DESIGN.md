@@ -26,6 +26,12 @@
 ### backend
 
 * dict settingsDict
+  * *buttonslabels*
+    * Numbers
+    * Letters
+    * Movable Do (recommended)
+    * Movable Do La minor
+    * Note names
   * *cadence*
     * I-IV-V-I (default)
     * V7-V7-V7-V7-1
@@ -33,6 +39,26 @@
     * I
     * tonic
   * *cadence tempo*
+    * default: 90bpm
+    * min: 40bpm
+    * max: 280bpm
+  * *playcadence*
+    * Always (beginners)
+    * Every 5 Questions
+    * Once for a new key
+    * Never
+  * *aftercorrectanswer*
+    * Play resolution (beginners)
+    * Play the correct tone
+    * Just indicate the correct tone
+    * *pause*
+      * default: 0.5 (in seconds; min: 0, max: 3.0)
+  * *whengivingup*
+    * playcadence  (boolean)
+    * *aftercadence*:
+      * play resolution (beginners)
+      * play correct tone ()
+  * *notes tempo*
     * default: 90bpm
     * min: 40bpm
     * max: 280bpm

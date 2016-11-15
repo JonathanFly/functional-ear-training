@@ -4,7 +4,7 @@ We aim to build a open source version of [Alain Benbassat method](http://www.mil
 
 We aim to be using [Kivy](https://kivy.org) and focus in portability; is a simple app, so, no excuses to not keep it portable.
 
-**KIVY**: [API Reference](https://kivy.org/docs/api-kivy.html) | [Getting Started](https://kivy.org/docs/gettingstarted/intro.html)
+**KIVY**: [API Reference](https://kivy.org/docs/api-kivy.html) | [Getting Started](https://kivy.org/docs/gettingstarted/intro.html) | [KV lang](https://kivy.org/docs/guide/lang.html)
 
 Some of our design ideas are on [DESIGN.md](DESIGN.md). Also, let us try to separate backend from frontend so that the backend may be reused as library.
 

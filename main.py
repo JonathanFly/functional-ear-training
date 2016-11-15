@@ -7,6 +7,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 from kivy.uix.rst import RstDocument
+from kivy.uix.screenmanager import FadeTransition
 
 Builder.load_file('featrainer.kv')
 
@@ -99,7 +100,7 @@ class MyApp(App):
         for (shortname_index, screen_class) in self.screen_dict.items():
             setattr(self, screen_class.__name__, screen_class)
 
-        self.AppScreenManager = AppScreenManager(initial_screen=InitialScreen())
+        self.AppScreenManager = AppScreenManager(initial_screen=InitialScreen(), transition=kivy.uix.screenmanager.FadeTransition())
         return self.AppScreenManager
 
     #def show_IntroductionScreen(self):

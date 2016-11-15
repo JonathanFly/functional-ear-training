@@ -32,6 +32,27 @@
         color: 0,0,0,1
         text: 'Ok'
 
+<BasicWindow>:
+    orientation: 'vertical'
+    Image:
+    GridLayout:
+        cols: 2
+        Button:
+            text: 'The Major Scale'
+            on_press: app.showScreen('basic-major')
+        Button:
+            text: 'Chromatics in a Major Context'
+            on_press: app.showScreen('basic-major-chromatics')
+        Button:
+            text: 'The Minor Scale'
+            on_press: app.showScreen('basic-minor')
+        Button:
+            text: 'Chromatics in a Minor Context'
+            on_press: app.showScreen('basic-minor-chromatics')
+    Label:
+        color: 0,0,0,1
+        text: 'Ok'
+
 <IntroductionScreen>:
     Label:
         color: 0,0,0,1

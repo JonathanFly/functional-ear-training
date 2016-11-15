@@ -24,6 +24,54 @@
   * Melodic dictation
   These are mainly global (default *settingsDict* or specific *settingsDict* for custom exercise)
 
+#### basic modes:
+
+major scale:
+
+* c major, first 4 intervals only, 1 octave
+* c major, last 4 intervals only, 1 octave
+* c major, all intervals, 1 octave
+* c major, all intervals, many octaves
+* not c major, 1 octave
+* not c major, many octaves
+* random major, 1 octave
+* random major, many octaves
+
+minor scale:
+
+* c minor, first 4 intervals only, 1 octave
+* c minor, last 4 intervals only, 1 octave
+* c minor, all intervals, 1 octave
+* c minor, all intervals, many octaves
+* not c minor, 1 octave
+* not c minor, many octaves
+* random minor, 1 octave
+* random minor, many octaves
+
+chromatics in major scale:
+
+* c major, first 6 intervals only, 1 octave
+* c major, last 7 intervals only, 1 octave
+* c major, all intervals, 1 octave
+* c major, all intervals, many octaves
+* not c major, 1 octave
+* not c major, many octaves
+* random major, 1 octave
+* random major, many octaves
+
+chromatics in minor scale:
+
+* c minor, first 6 intervals only, 1 octave
+* c minor, last 7 intervals only, 1 octave
+* c minor, all intervals, 1 octave
+* c minor, all intervals, many octaves
+* not c minor, 1 octave
+* not c minor, many octaves
+* random minor, 1 octave
+* random minor, many octaves
+
+**if not these, then advanced mode should support different keys for each exercise**
+
 ### backend
 
 * dict settingsDict

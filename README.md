@@ -6,6 +6,8 @@ We aim to be using [Kivy](https://kivy.org) and focus in portability; is a simpl
 
 **KIVY**: [API Reference](https://kivy.org/docs/api-kivy.html) | [Getting Started](https://kivy.org/docs/gettingstarted/intro.html)
 
+Some of our design ideas are on [DESIGN.md](DESIGN.md)
+
 ## other notes
 
 Would be great if someone could write this to a HTML5 webapp too. Maybe later..

@@ -6,7 +6,7 @@ We aim to be using [Kivy](https://kivy.org) and focus in portability; is a simpl
 
 **KIVY**: [API Reference](https://kivy.org/docs/api-kivy.html) | [Getting Started](https://kivy.org/docs/gettingstarted/intro.html)
 
-Some of our design ideas are on [DESIGN.md](DESIGN.md)
+Some of our design ideas are on [DESIGN.md](DESIGN.md). Also, let us try to separate backend from frontend so that the backend may be reused as library.
 
 ## other notes
 

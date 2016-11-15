@@ -5,6 +5,11 @@
         Rectangle:
             pos: self.pos
             size: self.size
+    InitialScreen:
+        id: 'screen1'
+    IntroductionScreen:
+        id: 'screen2'
+
 
 <WelcomeWindow>:
     orientation: 'vertical'
@@ -12,16 +17,25 @@
     BoxLayout:
         orientation: 'vertical'
         Button:
-            text: 'Introduction to the method'
+            text: 'Introduction'
+            on_press: app.showScreen('introduction')
         Button:
             text: 'Basic training'
+            on_press: app.showScreen('basic')
         Button:
             text: 'Advanced modes'
+            on_press: app.showScreen('advanced')
         Button:
             text: 'Settings'
+            on_press: app.showScreen('settings')
     Label:
         color: 0,0,0,1
         text: 'Ok'
 
+<IntroductionScreen>:
+    Label:
+        color: 0,0,0,1
+        text: 'long [b]text[/b]'
+        markup: 'true'
 #Label:
 #  color: 0, 0, 0, 1

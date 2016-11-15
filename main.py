@@ -23,6 +23,7 @@ class InitialScreen(Screen):
         self.add_widget(self.welcome_window)
 
 
+
 class WelcomeWindow(BoxLayout):
     def __init__(self, **kwargs):
         super(WelcomeWindow, self).__init__(**kwargs)
@@ -37,10 +38,37 @@ class WelcomeWindow(BoxLayout):
         #self.add_widget(self.Label2)
         #self.add_widget(self.Label3)
 
+
+
+class IntroductionScreen(Screen):
+    def __init__(self, **kwargs):
+        super(IntroductionScreen, self).__init__(**kwargs)
+
+        #self.introduction_screen = WelcomeWindow()
+        #self.add_widget(self.welcome_window)
+
 class MyApp(App):
 
     def build(self):
-        return AppScreenManager(initial_screen=InitialScreen())
+        self.screen_dict = {
+            'initial' : InitialScreen,
+            'introduction' : IntroductionScreen
+        }
+
+        # let's register screen classes addresses to the main app
+        for (shortname_index, screen_class) in self.screen_dict.items():
+            setattr(self, screen_class.__name__, screen_class)
+
+        self.AppScreenManager = AppScreenManager(initial_screen=InitialScreen())
+        return self.AppScreenManager
+
+    #def show_IntroductionScreen(self):
+    #    self.AppScreenManager.switch_to(IntroductionScreen())
+
+    def showScreen(self, screen='initial', **kwargs):
+
+        self.AppScreenManager.switch_to(self.screen_dict[screen]())
+        #return list[screen]
 
 
 if __name__ == '__main__':

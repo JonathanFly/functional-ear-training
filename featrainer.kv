@@ -1,0 +1,27 @@
+<AppScreenManager>:
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<WelcomeWindow>:
+    orientation: 'vertical'
+    Image:
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text: 'Introduction to the method'
+        Button:
+            text: 'Basic training'
+        Button:
+            text: 'Advanced modes'
+        Button:
+            text: 'Settings'
+    Label:
+        color: 0,0,0,1
+        text: 'Ok'
+
+#Label:
+#  color: 0, 0, 0, 1

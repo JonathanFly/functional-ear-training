@@ -22,6 +22,7 @@
   Is better to put it in root window/menu, so that we organize it comprehensively.
   * Melodic Interval
   * Melodic dictation
+  These are mainly global (default *settingsDict* or specific *settingsDict* for custom exercise)
 
 ### backend
 

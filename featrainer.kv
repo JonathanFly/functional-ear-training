@@ -5,10 +5,10 @@
         Rectangle:
             pos: self.pos
             size: self.size
-    InitialScreen:
-        id: 'screen1'
-    IntroductionScreen:
-        id: 'screen2'
+    #InitialScreen:
+    #    id: 'screen1'
+    #IntroductionScreen:
+    #    id: 'screen2'
 
 <InitialScreen>:
     BoxLayout:
@@ -75,6 +75,7 @@
 <IntroductionScreen>:
     BoxLayout:
         orientation: 'vertical'
+        id: 'mainwid'
         BoxLayout:
             orientation: 'horizontal'
             height: 170
@@ -85,3 +86,5 @@
             Label:
                 text: 'Introduction to the method'
                 color: 0,0,0,1
+            RstDocument:
+                id: 'thedoc'

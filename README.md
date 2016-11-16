@@ -11,3 +11,7 @@ Some of our design ideas are on [DESIGN.md](DESIGN.md). Also, let us try to sepa
 ## other notes
 
 Would be great if someone could write this to a HTML5 webapp too. Maybe later..
+
+## What is coming to life?
+
+![Functional Ear Trainer](fet-win.png)

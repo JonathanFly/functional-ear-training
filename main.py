@@ -21,24 +21,7 @@ class InitialScreen(Screen):
     def __init__(self, **kwargs):
         super(InitialScreen, self).__init__(**kwargs)
 
-        #self.welcome_window = WelcomeWindow()
-        #self.add_widget(self.welcome_window)
 
-
-
-#class WelcomeWindow(BoxLayout):
-#    def __init__(self, **kwargs):
-#        super(WelcomeWindow, self).__init__(**kwargs)
-
-        #widgets = []
-
-        #self.Label1 = Label(text='text 1')
-        #self.Label2 = Label(text='text 2')
-        #self.Label3 = Label(text='text 3')
-
-        #self.add_widget(self.Label1)
-        #self.add_widget(self.Label2)
-        #self.add_widget(self.Label3)
 
 class IntroductionScreen(Screen):
     def __init__(self, **kwargs):
@@ -51,7 +34,7 @@ class IntroductionScreen(Screen):
 
         self.IntroductionDocument = RstDocument(text=document)
         #self.introduction_screen = WelcomeWindow()
-        self.add_widget(self.IntroductionDocument)
+        self.ids.mainwid.add_widget(self.IntroductionDocument)
 
         #self.introduction_widget = IntroductionWidget()
         #self.add_widget(self.introduction_widget)
@@ -73,14 +56,14 @@ class BasicScreen(Screen):
     def __init__(self, **kwargs):
         super(BasicScreen, self).__init__(**kwargs)
 
-        self.basic_window = BasicWindow()
-        self.add_widget(self.basic_window)
+        #self.basic_window = BasicWindow()
+        #self.add_widget(self.basic_window)
 
 
 
-class BasicWindow(BoxLayout):
-    def __init__(self, **kwargs):
-        super(BasicWindow, self).__init__(**kwargs)
+#class BasicWindow(BoxLayout):
+#    def __init__(self, **kwargs):
+#        super(BasicWindow, self).__init__(**kwargs)
 
         #widgets = []
 
@@ -91,6 +74,9 @@ class BasicWindow(BoxLayout):
         #self.add_widget(self.Label1)
         #self.add_widget(self.Label2)
         #self.add_widget(self.Label3)
+class ExerciseListScreen(Screen):
+    def __init__(self, **kwargs):
+        super(ExerciseListScreen, self).__init__(**kwargs)
 
 class MyApp(App):
 

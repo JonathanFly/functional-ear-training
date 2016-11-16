@@ -117,11 +117,13 @@ chromatics in minor scale:
     * 5 -> 1  
 * class ExerciseBase
   * *properties:*
+    * title
     * number of questions (default: 20; min: 10, max: 100)
     * key type (major/minor)
     * tonic (C, not-C, Random)
     * many octaves (boolean)
     * chromatics (boolean)
     * enables tones (1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1)
+    * *settingsDict*
 * class MelodicInterval(subclasses ExerciseBase)
 * class MelodicDictation(subclasses ExerciseBase)

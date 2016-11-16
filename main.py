@@ -21,16 +21,16 @@ class InitialScreen(Screen):
     def __init__(self, **kwargs):
         super(InitialScreen, self).__init__(**kwargs)
 
-        self.welcome_window = WelcomeWindow()
-        self.add_widget(self.welcome_window)
+        #self.welcome_window = WelcomeWindow()
+        #self.add_widget(self.welcome_window)
 
 
 
-class WelcomeWindow(BoxLayout):
-    def __init__(self, **kwargs):
-        super(WelcomeWindow, self).__init__(**kwargs)
+#class WelcomeWindow(BoxLayout):
+#    def __init__(self, **kwargs):
+#        super(WelcomeWindow, self).__init__(**kwargs)
 
-        widgets = []
+        #widgets = []
 
         #self.Label1 = Label(text='text 1')
         #self.Label2 = Label(text='text 2')
@@ -44,13 +44,6 @@ class IntroductionScreen(Screen):
     def __init__(self, **kwargs):
         super(IntroductionScreen, self).__init__(**kwargs)
 
-        self.introduction_widget = IntroductionWidget()
-        self.add_widget(self.introduction_widget)
-
-class IntroductionWidget(BoxLayout):
-    def __init__(self, **kwargs):
-        super(IntroductionWidget, self).__init__(**kwargs)
-
         try:
             document = str(open('text_test.rst','r').read())
         except FileNotFoundError:
@@ -59,6 +52,22 @@ class IntroductionWidget(BoxLayout):
         self.IntroductionDocument = RstDocument(text=document)
         #self.introduction_screen = WelcomeWindow()
         self.add_widget(self.IntroductionDocument)
+
+        #self.introduction_widget = IntroductionWidget()
+        #self.add_widget(self.introduction_widget)
+
+#class IntroductionWidget(BoxLayout):
+#    def __init__(self, **kwargs):
+#        super(IntroductionWidget, self).__init__(**kwargs)
+
+#        try:
+#            document = str(open('text_test.rst','r').read())
+#        except FileNotFoundError:
+#            document = 'Documentation not Found; please check your installation.'
+
+#        self.IntroductionDocument = RstDocument(text=document)
+#        #self.introduction_screen = WelcomeWindow()
+#        self.add_widget(self.IntroductionDocument)
 
 class BasicScreen(Screen):
     def __init__(self, **kwargs):
@@ -89,7 +98,7 @@ class MyApp(App):
 
         # this will be set when screen change needs confirmation
         self.is_occupied = False
-        
+
         self.screen_dict = {
             'initial' : InitialScreen,
             'introduction' : IntroductionScreen,

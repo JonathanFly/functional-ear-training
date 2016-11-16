@@ -10,76 +10,78 @@
     IntroductionScreen:
         id: 'screen2'
 
-
-<WelcomeWindow>:
-    orientation: 'vertical'
-    BoxLayout:
-        orientation: 'horizontal'
-        height: 170
-        size_hint: (1,None)
-        Image:
-            source: 'resources/logo.png'
-            on_touch_down: app.showScreen('initial')
-        Label:
-            text: 'Initial'
-            color: 0,0,0,1
+<InitialScreen>:
     BoxLayout:
         orientation: 'vertical'
-        Button:
-            text: 'Introduction'
-            on_press: app.showScreen('introduction')
-        Button:
-            text: 'Basic training'
-            on_press: app.showScreen('basic')
-        Button:
-            text: 'Advanced modes'
-            on_press: app.showScreen('advanced')
-        Button:
-            text: 'Settings'
-            on_press: app.showScreen('settings')
-    Label:
-        color: 0,0,0,1
-        text: 'Ok'
-
-<BasicWindow>:
-    orientation: 'vertical'
-    BoxLayout:
-        orientation: 'horizontal'
-        height: 170
-        size_hint: (1,None)
-        Image:
-            source: 'resources/logo.png'
-            on_touch_down: app.showScreen('initial')
+        BoxLayout:
+            orientation: 'horizontal'
+            height: 170
+            size_hint: (1,None)
+            Image:
+                source: 'resources/logo.png'
+                on_touch_down: app.showScreen('initial')
+            Label:
+                text: 'Initial'
+                color: 0,0,0,1
+        BoxLayout:
+            orientation: 'vertical'
+            Button:
+                text: 'Introduction'
+                on_press: app.showScreen('introduction')
+            Button:
+                text: 'Basic training'
+                on_press: app.showScreen('basic')
+            Button:
+                text: 'Advanced modes'
+                on_press: app.showScreen('advanced')
+            Button:
+                text: 'Settings'
+                on_press: app.showScreen('settings')
         Label:
-            text: 'Basic ear training'
             color: 0,0,0,1
-    GridLayout:
-        cols: 2
-        Button:
-            text: 'The Major Scale'
-            on_press: app.showScreen('basic-major')
-        Button:
-            text: 'Chromatics in a Major Context'
-            on_press: app.showScreen('basic-major-chromatics')
-        Button:
-            text: 'The Minor Scale'
-            on_press: app.showScreen('basic-minor')
-        Button:
-            text: 'Chromatics in a Minor Context'
-            on_press: app.showScreen('basic-minor-chromatics')
-    Label:
-        color: 0,0,0,1
-        text: 'Ok'
+            text: 'Ok'
 
-<IntroductionWidget>:
-    orientation: 'vertical'
+<BasicScreen>:
     BoxLayout:
-        orientation: 'horizontal'
-        height: 170
-        size_hint: (1,None)
-        Image:
-            source: 'resources/logo.png'
-            on_touch_down: app.showScreen('initial')
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'horizontal'
+            height: 170
+            size_hint: (1,None)
+            Image:
+                source: 'resources/logo.png'
+                on_touch_down: app.showScreen('initial')
+            Label:
+                text: 'Basic ear training'
+                color: 0,0,0,1
+        GridLayout:
+            cols: 2
+            Button:
+                text: 'The Major Scale'
+                on_press: app.showScreen('basic-major')
+            Button:
+                text: 'Chromatics in a Major Context'
+                on_press: app.showScreen('basic-major-chromatics')
+            Button:
+                text: 'The Minor Scale'
+                on_press: app.showScreen('basic-minor')
+            Button:
+                text: 'Chromatics in a Minor Context'
+                on_press: app.showScreen('basic-minor-chromatics')
         Label:
-            text: 'Introduction to the method'
             color: 0,0,0,1
+            text: 'Ok'
+
+<IntroductionScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'horizontal'
+            height: 170
+            size_hint: (1,None)
+            Image:
+                source: 'resources/logo.png'
+                on_touch_down: app.showScreen('initial')
+            Label:
+                text: 'Introduction to the method'
+                color: 0,0,0,1

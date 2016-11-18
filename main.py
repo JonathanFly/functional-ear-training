@@ -60,20 +60,10 @@ class ExerciseListScreen(Screen):
     def __init__(self, exercise, **kwargs):
         super(ExerciseListScreen, self).__init__(**kwargs)
 
-        #self.screen_title = 'freak'
-
-        #self.add_widget(AppHeader())
         exercises = ConfigObj('exercises/{}.fetl'.format(exercise))
-        #MyVertBox = BoxLayout(orientation='vertical')
 
-        #ExerciseListBox = GridLayout(cols=2)
-        #MyVertBox.add_widget(AppHeader(screen_title='freaak'))
-        #self.ids.youfreak.add_widget(AppHeader(screen_title='freaak'))
-        #MyVertBox.add_widget(AppHeader(screen_title='freaak'))
         self.ids.app_header.screen_title = 'hey'
-        #self.ids.youfreak.ids.exercise_list_grid.add_widget(ExerciseListBox)
 
-        #self.add_widget(MyVertBox)
         for section in exercises.sections:
             test_button = Button(text=exercises[section]['title'])
             self.ids.exercise_list_grid.add_widget(test_button)

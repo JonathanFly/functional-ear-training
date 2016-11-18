@@ -72,17 +72,7 @@
     BoxLayout:
         orientation: 'vertical'
         AppHeader:
-        #BoxLayout:
-            id: 'mainwid'
-            orientation: 'horizontal'
-            height: 170
-            size_hint: (1,None)
-            Image:
-                source: 'resources/logo.png'
-                on_touch_down: app.showScreen('initial')
-            Label:
-                text: 'Introduction to the method'
-                color: 0,0,0,1
+            screen_title: 'Introduction to the Method'
         RstDocument:
             id: 'thedoc'
             background_color: 1, 1, 1, 1
@@ -99,8 +89,6 @@
             cols: 2
 
 <AppHeader>:
-    #screen_title: 'WAT!'
-    #id: app_header
     orientation: 'horizontal'
     height: 170
     size_hint: (1,None)
@@ -111,7 +99,3 @@
         id: 'label_id'
         text: root.screen_title
         color: 0,0,0,1
-
-#<AppHeader@Label>:
-#    text: 'Basic ear training'
-#    color: 0,0,0,1

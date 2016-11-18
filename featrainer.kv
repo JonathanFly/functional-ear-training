@@ -71,7 +71,8 @@
 <IntroductionScreen>:
     BoxLayout:
         orientation: 'vertical'
-        BoxLayout:
+        AppHeader:
+        #BoxLayout:
             id: 'mainwid'
             orientation: 'horizontal'
             height: 170
@@ -86,3 +87,31 @@
             id: 'thedoc'
             background_color: 1, 1, 1, 1
             text: root.getDocument()
+
+<ExerciseListScreen>:
+    BoxLayout:
+        id: youfreak
+        orientation: 'vertical'
+        AppHeader:
+            id: app_header
+        GridLayout:
+            id: exercise_list_grid
+            cols: 2
+
+<AppHeader>:
+    #screen_title: 'WAT!'
+    #id: app_header
+    orientation: 'horizontal'
+    height: 170
+    size_hint: (1,None)
+    Image:
+        source: 'resources/logo.png'
+        on_touch_down: app.showScreen('initial')
+    Label:
+        id: 'label_id'
+        text: root.screen_title
+        color: 0,0,0,1
+
+#<AppHeader@Label>:
+#    text: 'Basic ear training'
+#    color: 0,0,0,1

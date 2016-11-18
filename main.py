@@ -10,10 +10,22 @@ from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.rst import RstDocument
 from kivy.uix.screenmanager import FadeTransition, NoTransition
+from kivy.properties import StringProperty
 
 from configobj import ConfigObj
 
 Builder.load_file('featrainer.kv')
+
+class AppHeader(BoxLayout):
+
+    screen_title = StringProperty()
+
+    def __init__(self, screen_title='', **kwargs):
+        super(AppHeader, self).__init__(**kwargs)
+        self.screen_title = screen_title
+
+    def get_screen_title(self):
+        return self.screen_title
 
 class AppScreenManager(ScreenManager):
     def __init__(self, initial_screen, **kwargs):
@@ -48,13 +60,23 @@ class ExerciseListScreen(Screen):
     def __init__(self, exercise, **kwargs):
         super(ExerciseListScreen, self).__init__(**kwargs)
 
-        exercises = ConfigObj('exercises/{}.fetl'.format(exercise))
+        #self.screen_title = 'freak'
 
-        ExerciseListBox = GridLayout(cols=2)
-        self.add_widget(ExerciseListBox)
+        #self.add_widget(AppHeader())
+        exercises = ConfigObj('exercises/{}.fetl'.format(exercise))
+        #MyVertBox = BoxLayout(orientation='vertical')
+
+        #ExerciseListBox = GridLayout(cols=2)
+        #MyVertBox.add_widget(AppHeader(screen_title='freaak'))
+        #self.ids.youfreak.add_widget(AppHeader(screen_title='freaak'))
+        #MyVertBox.add_widget(AppHeader(screen_title='freaak'))
+        self.ids.app_header.screen_title = 'hey'
+        #self.ids.youfreak.ids.exercise_list_grid.add_widget(ExerciseListBox)
+
+        #self.add_widget(MyVertBox)
         for section in exercises.sections:
             test_button = Button(text=exercises[section]['title'])
-            ExerciseListBox.add_widget(test_button)
+            self.ids.exercise_list_grid.add_widget(test_button)
 
 
 class MyApp(App):

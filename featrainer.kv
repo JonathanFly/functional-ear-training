@@ -75,8 +75,8 @@
 <IntroductionScreen>:
     BoxLayout:
         orientation: 'vertical'
-        id: 'mainwid'
         BoxLayout:
+            id: 'mainwid'
             orientation: 'horizontal'
             height: 170
             size_hint: (1,None)
@@ -86,5 +86,7 @@
             Label:
                 text: 'Introduction to the method'
                 color: 0,0,0,1
-            RstDocument:
-                id: 'thedoc'
+        RstDocument:
+            id: 'thedoc'
+            background_color: 1, 1, 1, 1
+            text: root.getDocument()

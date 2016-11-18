@@ -21,59 +21,25 @@ class InitialScreen(Screen):
     def __init__(self, **kwargs):
         super(InitialScreen, self).__init__(**kwargs)
 
-
-
 class IntroductionScreen(Screen):
     def __init__(self, **kwargs):
         super(IntroductionScreen, self).__init__(**kwargs)
 
+    def getDocument(self):
+
         try:
             document = str(open('text_test.rst','r').read())
+            self.document = document
         except FileNotFoundError:
-            document = 'Documentation not Found; please check your installation.'
+            self.document = 'Documentation not Found; please check your installation.'
 
-        self.IntroductionDocument = RstDocument(text=document)
-        #self.introduction_screen = WelcomeWindow()
-        self.ids.mainwid.add_widget(self.IntroductionDocument)
-
-        #self.introduction_widget = IntroductionWidget()
-        #self.add_widget(self.introduction_widget)
-
-#class IntroductionWidget(BoxLayout):
-#    def __init__(self, **kwargs):
-#        super(IntroductionWidget, self).__init__(**kwargs)
-
-#        try:
-#            document = str(open('text_test.rst','r').read())
-#        except FileNotFoundError:
-#            document = 'Documentation not Found; please check your installation.'
-
-#        self.IntroductionDocument = RstDocument(text=document)
-#        #self.introduction_screen = WelcomeWindow()
-#        self.add_widget(self.IntroductionDocument)
+        return self.document
 
 class BasicScreen(Screen):
     def __init__(self, **kwargs):
         super(BasicScreen, self).__init__(**kwargs)
 
-        #self.basic_window = BasicWindow()
-        #self.add_widget(self.basic_window)
 
-
-
-#class BasicWindow(BoxLayout):
-#    def __init__(self, **kwargs):
-#        super(BasicWindow, self).__init__(**kwargs)
-
-        #widgets = []
-
-        #self.Label1 = Label(text='text 1')
-        #self.Label2 = Label(text='text 2')
-        #self.Label3 = Label(text='text 3')
-
-        #self.add_widget(self.Label1)
-        #self.add_widget(self.Label2)
-        #self.add_widget(self.Label3)
 class ExerciseListScreen(Screen):
     def __init__(self, **kwargs):
         super(ExerciseListScreen, self).__init__(**kwargs)
@@ -98,13 +64,9 @@ class MyApp(App):
         self.AppScreenManager = AppScreenManager(initial_screen=InitialScreen(), transition=kivy.uix.screenmanager.NoTransition())
         return self.AppScreenManager
 
-    #def show_IntroductionScreen(self):
-    #    self.AppScreenManager.switch_to(IntroductionScreen())
-
     def showScreen(self, screen='initial', **kwargs):
 
         self.AppScreenManager.switch_to(self.screen_dict[screen]())
-        #return list[screen]
 
 
 if __name__ == '__main__':

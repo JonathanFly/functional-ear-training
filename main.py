@@ -5,9 +5,13 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
+from kivy.uix.button import Button
 from kivy.uix.rst import RstDocument
 from kivy.uix.screenmanager import FadeTransition, NoTransition
+
+from configobj import ConfigObj
 
 Builder.load_file('featrainer.kv')
 
@@ -41,8 +45,17 @@ class BasicScreen(Screen):
 
 
 class ExerciseListScreen(Screen):
-    def __init__(self, **kwargs):
+    def __init__(self, exercise, **kwargs):
         super(ExerciseListScreen, self).__init__(**kwargs)
+
+        exercises = ConfigObj('exercises/{}.fetl'.format(exercise))
+
+        ExerciseListBox = GridLayout(cols=2)
+        self.add_widget(ExerciseListBox)
+        for section in exercises.sections:
+            test_button = Button(text=exercises[section]['title'])
+            ExerciseListBox.add_widget(test_button)
+
 
 class MyApp(App):
 
@@ -67,6 +80,11 @@ class MyApp(App):
     def showScreen(self, screen='initial', **kwargs):
 
         self.AppScreenManager.switch_to(self.screen_dict[screen]())
+
+    def showExerciseListScreen(self, exercise):
+
+        self.ExerciseListScreen = ExerciseListScreen(exercise)
+        self.AppScreenManager.switch_to(self.ExerciseListScreen)
 
 
 if __name__ == '__main__':

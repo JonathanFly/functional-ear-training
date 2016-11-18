@@ -5,10 +5,6 @@
         Rectangle:
             pos: self.pos
             size: self.size
-    #InitialScreen:
-    #    id: 'screen1'
-    #IntroductionScreen:
-    #    id: 'screen2'
 
 <InitialScreen>:
     BoxLayout:
@@ -58,16 +54,16 @@
             cols: 2
             Button:
                 text: 'The Major Scale'
-                on_press: app.showScreen('basic-major')
+                on_press: app.showExerciseListScreen('basic-major')
             Button:
                 text: 'Chromatics in a Major Context'
-                on_press: app.showScreen('basic-major-chromatics')
+                on_press: app.showExerciseListScreen('basic-major-chromatics')
             Button:
                 text: 'The Minor Scale'
-                on_press: app.showScreen('basic-minor')
+                on_press: app.showExerciseListScreen('basic-minor')
             Button:
                 text: 'Chromatics in a Minor Context'
-                on_press: app.showScreen('basic-minor-chromatics')
+                on_press: app.showExerciseListScreen('basic-minor-chromatics')
         Label:
             color: 0,0,0,1
             text: 'Ok'

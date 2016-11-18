@@ -15,3 +15,11 @@ Would be great if someone could write this to a HTML5 webapp too. Maybe later..
 ## What is coming to life?
 
 ![Functional Ear Trainer](fet-win.png)
+
+## Dependencies
+
+* python 3.5
+* kivy
+* lds2
+* configobj
+* that for rst rendering, preferably try using something else.

@@ -8,6 +8,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.uix.button import Button
+from kivy.core.text.markup import MarkupLabel
 from kivy.uix.rst import RstDocument
 from kivy.uix.screenmanager import FadeTransition, NoTransition
 from kivy.properties import StringProperty
@@ -65,9 +66,21 @@ class ExerciseListScreen(Screen):
         self.ids.app_header.screen_title = 'hey'
 
         for section in exercises.sections:
-            test_button = Button(text=exercises[section]['title'])
+            test_button = Button(text=self.bttext(exercises[section]['title']), markup=True, valign='top', halign='center')
+
             self.ids.exercise_list_grid.add_widget(test_button)
 
+    def bttext(self, ex_title):
+        hey = str()
+        for idx,item in enumerate(ex_title):
+            if idx==0:
+                hey += "[size=19]{}[/size]\n".format(item)
+            elif idx==1:
+                hey += "[b]{}[/b]\n".format(item)
+            elif idx==2:
+                hey += "{}\n".format(item)
+
+        return hey
 
 class MyApp(App):
 

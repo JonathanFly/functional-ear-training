@@ -1,10 +1,25 @@
 title = The Major Scale
 
-['C Major']
-title = hey
+['major-exercise1']
+title = C Major, [b]I-IV intervals[/b], one octave
 
-['D major']
-title = yup
+['major-exercise2']
+title = C Major, VI-I intervals, one octave
 
-['G Major']
-title = heh
+['major-exercise3']
+title = C Major, all intervals, one octave
+
+['major-exercise4']
+title = C Major, all intervals, many octaves
+
+['major-exercise5']
+title = NOT-C Major, all intervals, one octave
+
+['major-exercise6']
+title = NOT-C Major, all intervals, many octaves
+
+['major-exercise7']
+title = Random Major, all intervals, one octave
+
+['major-exercise8']
+title = Random Major, all intervals, many octaves

@@ -11,7 +11,7 @@ from kivy.uix.button import Button
 from kivy.core.text.markup import MarkupLabel
 from kivy.uix.rst import RstDocument
 from kivy.uix.screenmanager import FadeTransition, NoTransition
-from kivy.properties import StringProperty
+from kivy.properties import StringProperty, ObjectProperty
 
 from configobj import ConfigObj
 
@@ -57,6 +57,14 @@ class BasicScreen(Screen):
         super(BasicScreen, self).__init__(**kwargs)
 
 
+class ExerciseButton(Button):
+
+    config_dict = ObjectProperty()
+
+    def __init__(self, config_dict=config_dict, **kwargs):
+        super(ExerciseButton, self).__init__(**kwargs)
+        self.config_dict = config_dict
+
 class ExerciseListScreen(Screen):
     def __init__(self, exercise, **kwargs):
         super(ExerciseListScreen, self).__init__(**kwargs)
@@ -66,11 +74,12 @@ class ExerciseListScreen(Screen):
         self.ids.app_header.screen_title = 'hey'
 
         for section in exercises.sections:
-            test_button = Button(text=self.bttext(exercises[section]['title']), markup=True, valign='top', halign='center')
+            config_dict = exercises[section].dict()
+            test_button = ExerciseButton(config_dict=config_dict,text=self.bt_text(config_dict['title']), markup=True, valign='top', halign='center')
 
             self.ids.exercise_list_grid.add_widget(test_button)
 
-    def bttext(self, ex_title):
+    def bt_text(self, ex_title):
         hey = str()
         for idx,item in enumerate(ex_title):
             if idx==0:
@@ -81,6 +90,14 @@ class ExerciseListScreen(Screen):
                 hey += "{}\n".format(item)
 
         return hey
+
+        #def bt_callback(self, instance):
+
+
+
+class ExerciseScreen(Screen):
+    def __init__(self, **kwargs):
+        super(ExerciseScreen, self).__init__(**kwargs)
 
 class MyApp(App):
 

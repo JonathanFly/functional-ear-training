@@ -21,6 +21,8 @@
                 color: 0,0,0,1
         BoxLayout:
             orientation: 'vertical'
+            padding: 16,16,16,16
+            spacing: 4
             Button:
                 text: 'Introduction'
                 on_press: app.showScreen('introduction')
@@ -52,6 +54,8 @@
                 color: 0,0,0,1
         GridLayout:
             cols: 2
+            padding: 16,16,16,16
+            spacing: 4
             Button:
                 text: 'The Major Scale'
                 on_press: app.showExerciseListScreen('basic-major')
@@ -87,6 +91,8 @@
         GridLayout:
             id: exercise_list_grid
             cols: 2
+            padding: 16,16,16,16
+            spacing: 4
 
 <ExerciseScreen>:
     BoxLayout:
@@ -103,23 +109,43 @@
                 text: 'Play the correct Answer'
         BoxLayout:
             id: interval_buttons
-            orientation: 'horizontal'
-            Button:
-                text: '1'
-            Button:
-                text: '2'
-            Button:
-                text: '3'
-            Button:
-                text: '4'
-            Button:
-                text: '5'
-            Button:
-                text: '6'
-            Button:
-                text: '7'
-            Button:
-                text: '8'
+            orientation: 'vertical'
+            BoxLayout:
+                id: interval_chromatics
+                Label:
+                    size_hint: (0.5, 1)
+                Button:
+                    text: 'b2'
+                Button:
+                    text: 'b3'
+                Label:
+                    size_hint: (1, 1)
+                Button:
+                    text: '#4'
+                Button:
+                    text: 'b6'
+                Button:
+                    text: 'b7'
+                Label:
+                    size_hint: (1.5, 1)
+            BoxLayout:
+                id: interval_scale_tones
+                Button:
+                    text: '1'
+                Button:
+                    text: '2'
+                Button:
+                    text: '3'
+                Button:
+                    text: '4'
+                Button:
+                    text: '5'
+                Button:
+                    text: '6'
+                Button:
+                    text: '7'
+                Button:
+                    text: '8'
         BoxLayout:
             id: correct_and_incorrect
             orientation: 'horizontal'

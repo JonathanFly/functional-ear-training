@@ -8,26 +8,69 @@ display_tones = 1,2,3,4,5,6,7,8
 enabled_tones = 1,2,3,4
 key_type = major
 tonic = c
-many_octaves = true
+many_octaves = false
 chromatics = false
 
 ['major-exercise2']
 title = C Major, VI-I intervals, one octave
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 5,6,7,8
+key_type = major
+tonic = c
+many_octaves = false
+chromatics = false
 
 ['major-exercise3']
 title = C Major, all intervals, one octave
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 1,2,3,4,5,6,7,8
+key_type = major
+tonic = c
+many_octaves = false
+chromatics = false
 
 ['major-exercise4']
 title = C Major, all intervals, many octaves
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 1,2,3,4,5,6,7,8
+key_type = major
+tonic = c
+many_octaves = true
+chromatics = false
 
 ['major-exercise5']
 title = NOT-C Major, all intervals, one octave
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 1,2,3,4,5,6,7,8
+key_type = major
+tonic = not-c
+many_octaves = false
+chromatics = false
 
 ['major-exercise6']
 title = NOT-C Major, all intervals, many octaves
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 1,2,3,4,5,6,7,8
+key_type = major
+tonic = not-c
+many_octaves = true
+chromatics = false
 
 ['major-exercise7']
 title = Random Major, all intervals, one octave
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 1,2,3,4,5,6,7,8
+key_type = major
+tonic = random
+many_octaves = false
+chromatics = false
 
 ['major-exercise8']
 title = Random Major, all intervals, many octaves
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 1,2,3,4,5,6,7,8
+key_type = major
+tonic = random
+many_octaves = true
+chromatics = false
+

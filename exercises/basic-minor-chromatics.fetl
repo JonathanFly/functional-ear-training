@@ -5,41 +5,73 @@ title = The Minor Scale
 ['minor-chromatics-exercise1']
 title = C Minor, first 6 intervals only, one octave
 display_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
-enabled_tones = 1,b2,2,b3,3,4,#4
-key_type = major
+enabled_tones = 1,b2,2,b3,3,4,
+key_type = minor
 tonic = c
-many_octaves = true
-chromatics = false
+many_octaves = false
+chromatics = true
 
 ['minor-chromatics-exercise2']
 title = C Minor, last 7 intervals only, one octave
+display_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
+enabled_tones = '#4',5,b6,6,b7,7,1
+key_type = minor
+tonic = c
+many_octaves = false
+chromatics = true
 
 ['minor-chromatics-exercise3']
 title = C Minor, all intervals, one octave
 display_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
-enabled_tones = 1,b2,2,b3,3,4,#4
+enabled_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
 key_type = minor
 tonic = c
 many_octaves = false
-chromatics = false
+chromatics = true
 
 ['minor-chromatics-exercise4']
 title = C Minor, all intervals, many octaves
 display_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
-enabled_tones = 1,b2,2,b3,3,4,#4
+enabled_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
 key_type = minor
 tonic = c
 many_octaves = true
-chromatics = false
+chromatics = true
 
 ['minor-chromatics-exercise5']
 title = NOT-C Minor, all intervals, one octave
 
+display_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
+enabled_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
+key_type = minor
+tonic = not-c
+many_octaves = true
+chromatics = true
+
 ['minor-chromatics-exercise6']
 title = NOT-C Minor, all intervals, many octaves
+display_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
+enabled_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
+key_type = minor
+tonic = not-c
+many_octaves = true
+chromatics = true
 
 ['minor-chromatics-exercise7']
 title = Random Minor, all intervals, one octave
+display_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
+enabled_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
+key_type = minor
+tonic = random
+many_octaves = false
+chromatics = true
 
 ['minor-chromatics-exercise8']
 title = Random Minor, all intervals, many octaves
+display_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
+enabled_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
+key_type = minor
+tonic = random
+many_octaves = true
+chromatics = true
+

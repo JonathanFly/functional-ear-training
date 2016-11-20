@@ -2,24 +2,72 @@ title = The Minor Scale
 
 ['minor-exercise1']
 title = C Minor, I-IV intervals, one octave
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 1,2,3,4
+key_type = minor
+tonic = c
+many_octaves = false
+chromatics = false
 
 ['minor-exercise2']
 title = C Minor, VI-I intervals, one octave
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 5,6,7,8
+key_type = minor
+tonic = c
+many_octaves = false
+chromatics = false
 
 ['minor-exercise3']
 title = C Minor, all intervals, one octave
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 1,2,3,4,5,6,7,8
+key_type = minor
+tonic = c
+many_octaves = false
+chromatics = false
 
 ['minor-exercise4']
 title = C Minor, all intervals, many octaves
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 1,2,3,4,5,6,7,8
+key_type = minor
+tonic = c
+many_octaves = true
+chromatics = false
 
 ['minor-exercise5']
 title = NOT-C Minor, all intervals, one octave
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 1,2,3,4,5,6,7,8
+key_type = minor
+tonic = not-c
+many_octaves = false
+chromatics = false
 
 ['minor-exercise6']
 title = NOT-C Minor, all intervals, many octaves
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 1,2,3,4,5,6,7,8
+key_type = minor
+tonic = not-c
+many_octaves = true
+chromatics = false
 
 ['minor-exercise7']
 title = Random Minor, all intervals, one octave
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 1,2,3,4,5,6,7,8
+key_type = minor
+tonic = random
+many_octaves = false
+chromatics = false
 
 ['minor-exercise8']
 title = Random Minor, all intervals, many octaves
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 1,2,3,4,5,6,7,8
+key_type = minor
+tonic = random
+many_octaves = true
+chromatics = false

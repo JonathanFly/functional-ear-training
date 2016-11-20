@@ -9,19 +9,26 @@ class ExerciseList:
 
 class ExerciseBase:
 
-    def __init__(self, filename=None, configobj_str=None, settings_dict=None):
-        pass
+    def __init__(self, settings_dict=None, filename=None, configobj_str=None):
+        self.settings = ExerciseSettings(settings_dict=config_dict)
+
+class Exercise(ExerciseBase):
+
+    def __init__(self, config_dict, **kwargs):
+        super(Exercise, self).__init__(**kwargs)
+
+        #self.settings = ExerciseSettings(settings_dict=config_dict)
 
 class ExerciseSettings:
 
-    def __init__(self, filename=None, configobj_str=None, settings_dict=None):
+    def __init__(self, settings_dict=None, filename=None, configobj_str=None):
 
-        if filename:
+        if settings_dict:
+            s = settings_dict
+        elif filename:
             s = ConfigObj(filename)
         elif configobj_str:
             s = ConfigObj(configobj_str)
-        elif settings_dict:
-            s = settings_dict
 
         self.s = s
 

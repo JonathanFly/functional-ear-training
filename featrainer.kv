@@ -88,9 +88,63 @@
             id: exercise_list_grid
             cols: 2
 
+<ExerciseScreen>:
+    BoxLayout:
+        id: exercise_screen
+        orientation: 'vertical'
+        ExerciseHeader:
+            id: exercise_header
+        BoxLayout:
+            id: repeat_resolve_screen
+            orientation: 'horizontal'
+            Button:
+                text: 'Repeat'
+            Button:
+                text: 'Play the correct Answer'
+        BoxLayout:
+            id: interval_buttons
+            orientation: 'horizontal'
+            Button:
+                text: '1'
+            Button:
+                text: '2'
+            Button:
+                text: '3'
+            Button:
+                text: '4'
+            Button:
+                text: '5'
+            Button:
+                text: '6'
+            Button:
+                text: '7'
+            Button:
+                text: '8'
+        BoxLayout:
+            id: correct_and_incorrect
+            orientation: 'horizontal'
+            Label:
+                markup: 'true'
+                text: '[color=00ff00]0+[/color] [color=ff0000]0+[/color]'
+
+<ExerciseButton>:
+    on_press: app.showExercise(self.config_dict)
+
 <AppHeader>:
     orientation: 'horizontal'
     height: 170
+    size_hint: (1,None)
+    Image:
+        source: 'resources/logo.png'
+        on_touch_down: app.showScreen('initial')
+    Label:
+        id: 'label_id'
+        text: root.screen_title
+        color: 0,0,0,1
+
+<ExerciseHeader>:
+    orientation: 'horizontal'
+    height: 90
     size_hint: (1,None)
     Image:
         source: 'resources/logo.png'

@@ -28,6 +28,17 @@ class AppHeader(BoxLayout):
     def get_screen_title(self):
         return self.screen_title
 
+class ExerciseHeader(BoxLayout):
+
+    screen_title = StringProperty()
+
+    def __init__(self, screen_title='', **kwargs):
+        super(ExerciseHeader, self).__init__(**kwargs)
+        self.screen_title = screen_title
+
+    def get_screen_title(self):
+        return self.screen_title
+
 class AppScreenManager(ScreenManager):
     def __init__(self, initial_screen, **kwargs):
         super(AppScreenManager, self).__init__(**kwargs)
@@ -96,7 +107,7 @@ class ExerciseListScreen(Screen):
 
 
 class ExerciseScreen(Screen):
-    def __init__(self, **kwargs):
+    def __init__(self, config_dict=None, **kwargs):
         super(ExerciseScreen, self).__init__(**kwargs)
 
 class MyApp(App):
@@ -127,6 +138,11 @@ class MyApp(App):
 
         self.ExerciseListScreen = ExerciseListScreen(exercise)
         self.AppScreenManager.switch_to(self.ExerciseListScreen)
+
+    def showExercise(self, config_dict):
+
+        self.ExerciseScreen = ExerciseScreen(config_dict)
+        self.AppScreenManager.switch_to(self.ExerciseScreen)
 
 
 if __name__ == '__main__':

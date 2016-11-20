@@ -1,16 +1,36 @@
 title = The Minor Scale
 
+# 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
+
 ['minor-chromatics-exercise1']
 title = C Minor, first 6 intervals only, one octave
+display_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
+enabled_tones = 1,b2,2,b3,3,4,#4
+key_type = major
+tonic = c
+many_octaves = true
+chromatics = false
 
 ['minor-chromatics-exercise2']
 title = C Minor, last 7 intervals only, one octave
 
 ['minor-chromatics-exercise3']
 title = C Minor, all intervals, one octave
+display_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
+enabled_tones = 1,b2,2,b3,3,4,#4
+key_type = minor
+tonic = c
+many_octaves = false
+chromatics = false
 
 ['minor-chromatics-exercise4']
 title = C Minor, all intervals, many octaves
+display_tones = 1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
+enabled_tones = 1,b2,2,b3,3,4,#4
+key_type = minor
+tonic = c
+many_octaves = true
+chromatics = false
 
 ['minor-chromatics-exercise5']
 title = NOT-C Minor, all intervals, one octave

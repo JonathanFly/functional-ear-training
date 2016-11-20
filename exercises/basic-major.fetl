@@ -1,7 +1,15 @@
 title = The Major Scale
 
+#1,b2,2,b3,3,4,#4,5,b6,6,b7,7,1
+
 ['major-exercise1']
 title = C Major, [b]I-IV intervals[/b], one octave
+display_tones = 1,2,3,4,5,6,7,8
+enabled_tones = 1,2,3,4
+key_type = major
+tonic = c
+many_octaves = true
+chromatics = false
 
 ['major-exercise2']
 title = C Major, VI-I intervals, one octave

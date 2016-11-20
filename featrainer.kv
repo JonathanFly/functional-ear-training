@@ -112,6 +112,8 @@
             orientation: 'vertical'
             BoxLayout:
                 id: interval_chromatics
+                padding: 16,28,16,4
+                spacing: 4
                 Label:
                     size_hint: (0.5, 1)
                 Button:
@@ -130,6 +132,8 @@
                     size_hint: (1.5, 1)
             BoxLayout:
                 id: interval_scale_tones
+                padding: 16,0,16,32
+                spacing: 4
                 Button:
                     text: '1'
                 Button:
@@ -149,6 +153,9 @@
         BoxLayout:
             id: correct_and_incorrect
             orientation: 'horizontal'
+            Label:
+                markup: 'true'
+                text: '[color=666666]1[/color][color=333333]/[/color][color=999999]20[/color]'
             Label:
                 markup: 'true'
                 text: '[color=00ff00]0+[/color] [color=ff0000]0+[/color]'

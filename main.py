@@ -15,6 +15,8 @@ from kivy.properties import StringProperty, ObjectProperty
 
 from configobj import ConfigObj
 
+from midi2audio import FluidSynth
+
 Builder.load_file('featrainer.kv')
 
 class AppHeader(BoxLayout):

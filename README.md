@@ -23,3 +23,7 @@ Would be great if someone could write this to a HTML5 webapp too. Maybe later..
 * lds2
 * configobj
 * that for rst rendering, preferably try using something else.
+
+## Jupyter nootebooks
+
+[midi-wav-midi2audio-music21](https://iacchus.github.io/jupyter-notebooks/html/midi-wav-midi2audio-music21.html)

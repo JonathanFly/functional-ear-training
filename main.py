@@ -12,12 +12,19 @@ from kivy.core.text.markup import MarkupLabel
 from kivy.uix.rst import RstDocument
 from kivy.uix.screenmanager import FadeTransition, NoTransition
 from kivy.properties import StringProperty, ObjectProperty
+from kivy.uix.settings import Settings, SettingsPanel
 
 from configobj import ConfigObj
 
 from midi2audio import FluidSynth
 
 Builder.load_file('featrainer.kv')
+
+class AppScreenManager(ScreenManager):
+    def __init__(self, initial_screen, **kwargs):
+        super(AppScreenManager, self).__init__(**kwargs)
+
+        self.switch_to(initial_screen)
 
 class AppHeader(BoxLayout):
 
@@ -41,11 +48,6 @@ class ExerciseHeader(BoxLayout):
     def get_screen_title(self):
         return self.screen_title
 
-class AppScreenManager(ScreenManager):
-    def __init__(self, initial_screen, **kwargs):
-        super(AppScreenManager, self).__init__(**kwargs)
-
-        self.switch_to(initial_screen)
 
 class InitialScreen(Screen):
     def __init__(self, **kwargs):
@@ -68,15 +70,6 @@ class IntroductionScreen(Screen):
 class BasicScreen(Screen):
     def __init__(self, **kwargs):
         super(BasicScreen, self).__init__(**kwargs)
-
-
-class ExerciseButton(Button):
-
-    config_dict = ObjectProperty()
-
-    def __init__(self, config_dict=config_dict, **kwargs):
-        super(ExerciseButton, self).__init__(**kwargs)
-        self.config_dict = config_dict
 
 class ExerciseListScreen(Screen):
     def __init__(self, exercise, **kwargs):
@@ -106,11 +99,82 @@ class ExerciseListScreen(Screen):
 
         #def bt_callback(self, instance):
 
+class ExerciseButton(Button):
 
+    config_dict = ObjectProperty()
+
+    def __init__(self, config_dict=config_dict, **kwargs):
+        super(ExerciseButton, self).__init__(**kwargs)
+        self.config_dict = config_dict
+
+class ExerciseLoadWidget(BoxLayout):
+    def __init__(self, config_dict=None, **kwargs):
+        super(ExerciseLoadWidget, self).__init__(**kwargs)
+
+        #self.ids.exercise_container.add_widget(ExerciseLoadPlayWidget)
+
+class ExercisePlayWidget(BoxLayout):
+    def __init__(self, config_dict=None, **kwargs):
+        super(ExercisePlayWidget, self).__init__(**kwargs)
+
+        #self.ids.exercise_container.add_widget(ExerciseLoadPlayWidget)
 
 class ExerciseScreen(Screen):
     def __init__(self, config_dict=None, **kwargs):
         super(ExerciseScreen, self).__init__(**kwargs)
+
+        self.ids.exercise_container.add_widget(ExerciseLoadWidget(config_dict))
+
+class SettingsWidget(Settings):
+    def __init__(self, **kwargs):
+        super(SettingsWidget, self).__init__(**kwargs)
+
+        from kivy.uix.colorpicker import ColorPicker
+        self.register_type('colorpicker', ColorPicker)
+            # from kivy.config import ConfigParser
+            # from json import dumps
+            #
+            # global_settings_dict = ConfigObj('settings.cfg')
+            #
+            # config_dict = [
+            #     {
+            #         "type" : "title",
+            #         "title" : "Settings"
+            #     },
+            #     {
+            #         "type" : "options",
+            #         "title" : "Buttons Labels",
+            #         "options" : [
+            #             "Numbers",
+            #             "Letters",
+            #             "Movable Do (recommended)",
+            #             "Movable Do La Minor",
+            #             "Note Names"
+            #         ],
+            #         "section" : "buttonslabels",
+            #         "key" : "buttonslabels"
+            #     },
+            # ]
+            #
+            # config_json = dumps(config_dict)
+            # config = ConfigParser()
+            # config.read(config_json)
+            #
+            # config.setdefault("buttonslabels","buttonslabels", "Movable Do (recommended)")
+            #
+            # returning_json = str()
+            #
+            # print(config_json)
+            # s = Settings()
+            # s.create_json_panel("Buttons Labels", config, data=config_json)
+            # self.ids.settings_container.add_widget(s)
+
+            #print(returning_json)
+            
+class SettingsScreen(Screen):
+    def __init__(self, **kwargs):
+        super(SettingsScreen, self).__init__(**kwargs)
+        self.add_widget(SettingsWidget())
 
 class MyApp(App):
 
@@ -123,6 +187,7 @@ class MyApp(App):
             'initial' : InitialScreen,
             'introduction' : IntroductionScreen,
             'basic' : BasicScreen,
+            'settings' : SettingsScreen,
         }
 
         # let's register screen classes addresses to the main app

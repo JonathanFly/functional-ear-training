@@ -94,6 +94,9 @@
             padding: 16,16,16,16
             spacing: 4
 
+<ExerciseButton>:
+    on_press: app.showExercise(self.config_dict)
+
 <ExerciseScreen>:
     BoxLayout:
         id: exercise_screen
@@ -101,67 +104,84 @@
         ExerciseHeader:
             id: exercise_header
         BoxLayout:
-            id: repeat_resolve_screen
-            orientation: 'horizontal'
-            Button:
-                text: 'Repeat'
-            Button:
-                text: 'Play the correct Answer'
-        BoxLayout:
-            id: interval_buttons
-            orientation: 'vertical'
-            BoxLayout:
-                id: interval_chromatics
-                padding: 16,28,16,4
-                spacing: 4
-                Label:
-                    size_hint: (0.5, 1)
-                Button:
-                    text: 'b2'
-                Button:
-                    text: 'b3'
-                Label:
-                    size_hint: (1, 1)
-                Button:
-                    text: '#4'
-                Button:
-                    text: 'b6'
-                Button:
-                    text: 'b7'
-                Label:
-                    size_hint: (1.5, 1)
-            BoxLayout:
-                id: interval_scale_tones
-                padding: 16,0,16,32
-                spacing: 4
-                Button:
-                    text: '1'
-                Button:
-                    text: '2'
-                Button:
-                    text: '3'
-                Button:
-                    text: '4'
-                Button:
-                    text: '5'
-                Button:
-                    text: '6'
-                Button:
-                    text: '7'
-                Button:
-                    text: '8'
-        BoxLayout:
-            id: correct_and_incorrect
-            orientation: 'horizontal'
-            Label:
-                markup: 'true'
-                text: '[color=666666]1[/color][color=333333]/[/color][color=999999]20[/color]'
-            Label:
-                markup: 'true'
-                text: '[color=00ff00]0+[/color] [color=ff0000]0+[/color]'
+            id: exercise_container
 
-<ExerciseButton>:
-    on_press: app.showExercise(self.config_dict)
+<ExerciseLoadWidget>:
+    #BoxLayout:
+    #    orientation: 'vertical'
+    Label:
+        id: play_exercise
+        text: 'This Label is inside ExerciseLoadWidget'
+
+<ExercisePlayWidget>:
+    #BoxLayout:
+    #    orientation: 'vertical'
+    Button:
+        id: play_exercise
+        text: 'This Button is inside ExercisePlayWidget'
+
+<ExerciseWidget>:
+    BoxLayout:
+        id: repeat_resolve_screen
+        orientation: 'horizontal'
+        Button:
+            text: 'Repeat'
+        Button:
+            text: 'Play the correct Answer'
+    BoxLayout:
+        id: interval_buttons
+        orientation: 'vertical'
+        BoxLayout:
+            id: interval_chromatics
+            padding: 16,28,16,4
+            spacing: 4
+            Label:
+                size_hint: (0.5, 1)
+            Button:
+                text: 'b2'
+            Button:
+                text: 'b3'
+            Label:
+                size_hint: (1, 1)
+            Button:
+                text: '#4'
+            Button:
+                text: 'b6'
+            Button:
+                text: 'b7'
+            Label:
+                size_hint: (1.5, 1)
+        BoxLayout:
+            id: interval_scale_tones
+            padding: 16,0,16,32
+            spacing: 4
+            Button:
+                text: '1'
+            Button:
+                text: '2'
+            Button:
+                text: '3'
+            Button:
+                text: '4'
+            Button:
+                text: '5'
+            Button:
+                text: '6'
+            Button:
+                text: '7'
+            Button:
+                text: '8'
+    BoxLayout:
+        id: correct_and_incorrect
+        orientation: 'horizontal'
+        Label:
+            markup: 'true'
+            text: '[color=666666]1[/color][color=333333]/[/color][color=999999]20[/color]'
+        Label:
+            markup: 'true'
+            text: '[color=00ff00]0+[/color] [color=ff0000]0+[/color]'
+
+
 
 <AppHeader>:
     orientation: 'horizontal'
@@ -186,3 +206,8 @@
         id: 'label_id'
         text: root.screen_title
         color: 0,0,0,1
+
+<SettingsScreen>:
+    BoxLayout:
+        id: settings_container
+        orientation: 'vertical'

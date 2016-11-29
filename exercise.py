@@ -17,6 +17,7 @@ class Exercise(ExerciseBase):
     def __init__(self, config_dict, **kwargs):
         super(Exercise, self).__init__(**kwargs)
 
+        self.s = ExerciseSettings(config_dict=config_dict)
         #self.settings = ExerciseSettings(settings_dict=config_dict)
 
 class ExerciseSettings:

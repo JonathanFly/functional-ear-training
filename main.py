@@ -12,7 +12,8 @@ from kivy.core.text.markup import MarkupLabel
 from kivy.uix.rst import RstDocument
 from kivy.uix.screenmanager import FadeTransition, NoTransition
 from kivy.properties import StringProperty, ObjectProperty
-from kivy.uix.settings import Settings, SettingsPanel
+#from kivy.uix.settings import Settings, SettingsPanel
+import kivy.uix.settings as kset
 
 from configobj import ConfigObj
 
@@ -125,12 +126,27 @@ class ExerciseScreen(Screen):
 
         self.ids.exercise_container.add_widget(ExerciseLoadWidget(config_dict))
 
-class SettingsWidget(Settings):
+class SettingsWidget(kset.InterfaceWithNoMenu):
     def __init__(self, **kwargs):
         super(SettingsWidget, self).__init__(**kwargs)
 
-        from kivy.uix.colorpicker import ColorPicker
-        self.register_type('colorpicker', ColorPicker)
+        #mabudddy = kset.SettingsPanel(title='hello mate')
+
+        maopts= [
+                     "Numbers",
+                     "Letters",
+                     "Movable Do (recommended)",
+                     "Movable Do La Minor",
+                     "Note Names"
+                 ],
+        pan = kset.SettingsPanel(title="hello")
+        pan.add_widget(kset.SettingTitle(title="HEY BUDDY"))
+        #pan.add_widget(kset.SettingOptions(options=maopts, panel=pan))
+        self.add_widget(pan)
+
+        #self.add_widget(mabuddy)
+        #from kivy.uix.colorpicker import ColorPicker
+        #self.register_type('colorpicker', ColorPicker)
             # from kivy.config import ConfigParser
             # from json import dumps
             #
@@ -170,7 +186,7 @@ class SettingsWidget(Settings):
             # self.ids.settings_container.add_widget(s)
 
             #print(returning_json)
-            
+
 class SettingsScreen(Screen):
     def __init__(self, **kwargs):
         super(SettingsScreen, self).__init__(**kwargs)
